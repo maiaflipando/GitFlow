@@ -1,278 +1,91 @@
-<div align="center">
+<h1>GitFlowGPT: Natural Language GitHub Actions and Workflows</h1>
 
-<div align="center">
+<p>Welcome to GitFlowGPT, the repository that brings the power of Natural Language to GitHub Actions and Workflows! With GitFlowGPT, you can generate custom GitHub Actions and Workflows using prompt commands and unlock a world of possibilities for automating your development process. From generating README files to automating code refactoring, to blogpost about your open source project GitFlowGPT has got you covered!</p>
 
-<img src="./pics/logo-dark.png#gh-dark-mode-only" width="250"/>
-<img src="./pics/logo-light.png#gh-light-mode-only" width="250"/>
+<h2>What is GitFlowGPT?</h2>
 
-</div>
+<p>GitFlowGPT is an integrated front end and back end solution that harnesses the capabilities of OpenAI's language model, GPT-3.5, to provide a seamless experience for generating GitHub Actions and Workflows. By using natural language prompts, you can effortlessly create automation scripts without diving into complex YAML configurations.</p>
 
-[![GitHub license](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://github.com/Codium-ai/pr-agent/blob/main/LICENSE)
-[![Discord](https://badgen.net/badge/icon/discord?icon=discord&label&color=purple)](https://discord.com/channels/1057273017547378788/1126104260430528613)
+<h2>Features</h2>
 
-CodiumAI `pr-agent` is an open-source tool aiming to help developers review PRs faster and more efficiently. It automatically analyzes the PR, provides feedback and suggestions, and can answer free-text questions.
+<p>GitFlowGPT offers a range of exciting features that will boost your productivity and make your development process smoother than ever before. Here are just a few highlights:</p>
 
-</div>
+<h3>1. Generate README Files</h3>
 
-- [Live demo](#live-demo)
-- [Quickstart](#Quickstart)
-- [Usage and tools](#usage-and-tools)
-- [Configuration](#Configuration)
-- [How it works](#how-it-works)
-- [Roadmap](#roadmap)
-- [Similar projects](#similar-projects)
+<p>Say goodbye to manually writing README files for your projects. With GitFlowGPT, you can create professional and informative READMEs with just a few prompts. Provide the relevant details about your project, and let GitFlowGPT handle the rest. Your README will be generated in no time, leaving you with more time to focus on your code.</p>
 
-## Live demo
+<h3>2. Documentation Automation</h3>
 
-Experience GPT-4 powered PR review on your public GitHub repository with our hosted pr-agent. To try it, just mention `@CodiumAI-Agent` in any PR comment! The agent will generate a PR review in response.
+<p>Documentation is crucial, but it can be time-consuming to maintain. GitFlowGPT simplifies the process by automatically generating documentation based on your project's codebase. Just give GitFlowGPT a prompt, and watch it weave its magic. Whether it's API documentation, code explanations, or user guides, GitFlowGPT has you covered.</p>
 
-![Review generation process](./pics/pr-agent-review-process1.gif)
+<h3>3. PR Review Automation</h3>
 
-To set up your own pr-agent, see the [Quickstart](#Quickstart) section
+<p>Pull Request (PR) reviews can be a tedious task, but not anymore! GitFlowGPT can help you automate the review process by analyzing your code changes and providing valuable feedback. Simply provide the necessary context, and GitFlowGPT will generate a comprehensive review, highlighting potential issues and suggesting improvements.</p>
 
----
+<h3>4. Code Refactoring Assistance</h3>
 
-## Quickstart
+<p>Refactoring code is an essential part of software development, but it can be challenging to know where to start. GitFlowGPT can lend a helping hand by offering suggestions for code refactoring. Describe the code snippet you want to refactor, and GitFlowGPT will provide you with possible improvements and best practices.</p>
 
-To get started with pr-agent quickly, you first need to acquire two tokens:
+<h3>5. Blog Post Creator</h3>
 
-1. An OpenAI key from [here](https://platform.openai.com/), with access to GPT-4.
-2. A GitHub personal access token (classic) with the repo scope.
+<p>Generate a blog post that introduces your open-source project, providing onboarding instructions, features, and usage examples. The action can automatically extract relevant information from your codebase, such as API endpoints, key functionalities, and documentation, to create engaging and informative content for your readers.</p>
 
-There are several ways to use pr-agent. Let's start with the simplest one:
+<h3>6. Social Media Marketing Content</h3>
 
----
+<p>Create compelling social media marketing content to promote your open-source project. This action can generate catchy captions, hashtags, and short descriptions for platforms like Twitter, LinkedIn, or Instagram. You can highlight the unique features of your project, share success stories, or encourage users to contribute or try it out.</p>
 
-#### Method 1: Use Docker image (no installation required)
+<h3>7. Video Script Generator</h3>
 
-To request a review for a PR, or ask a question about a PR, you can run directly from the Docker image. Here's how:
+<p>Generate a script for an explanatory video about your open-source project. Describe its purpose, key functionalities, and benefits, while keeping it engaging and concise. The action can provide a structured outline, scene descriptions, and even suggested visuals to make your video production process smoother.</p>
 
-1. To request a review for a PR, run the following command:
+<p>... and Many More!</p>
 
-```
-docker run --rm -it -e OPENAI.KEY=<your key> -e GITHUB.USER_TOKEN=<your token> codiumai/pr-agent --pr_url <pr url>
-```
+<p>The above features are just the tip of the iceberg. GitFlowGPT is designed to be extensible, allowing you to create custom actions and workflows for any task you can imagine. From automating tests to deploying your application, the possibilities are endless. Let your creativity run wild and make GitFlowGPT work for you!</p>
 
-2. To ask a question about a PR, run the following command:
+<h2>Getting Started</h2>
 
-```
-docker run --rm -it -e OPENAI.KEY=<your key> -e GITHUB.USER_TOKEN=<your token> codiumai/pr-agent --pr_url <pr url> --question "<your question>"
-```
+<p>Getting started with GitFlowGPT is a breeze. Just follow these simple steps:</p>
 
-Possible questions you can ask include:
+<ol>
+  <li>Clone the GitFlowGPT repository to your local machine.</li>
+  <li>Install the necessary dependencies by running <code>npm install</code> in the project directory.</li>
+  <li>Configure your OpenAI API credentials by setting the <code>OPENAI_API_KEY</code> environment variable. Visit the OpenAI website to obtain an API key if you don't have one.</li>
+  <li>Run <code>npm start</code> to start the GitFlowGPT server.</li>
+  <li>Open your preferred browser and navigate to <code>http://localhost:3000</code>.</li>
+  <li>Voila! You're now ready to generate GitHub Actions and Workflows with ease.</li>
+</ol>
 
-- What is the main theme of this PR?
-- Is the PR ready for merge?
-- What are the main changes in this PR?
-- Should this PR be split into smaller parts?
-- Can you compose a rhymed song about this PR.
+<h2>Contributing</h2>
 
----
+<p>GitFlowGPT has been developed during the Scale AI July 2023 Hackathon by a team of GenAI enthusiasts: Earl Potters, Leon Paletta, Nitish Gopu, and Maia Brenner. We embarked on this journey with a shared goal of making people's lives easier through the power of language models and automation.</p>
 
-#### Method 2: Run from source
+<p>We would love to see the GitFlowGPT project grow and evolve with the help of the community. If you share our passion and have ideas to enhance GitFlowGPT, fix bugs, or add new features, we welcome your contributions!</p>
 
-1. Clone this repository:
+<p>To contribute to GitFlowGPT, please follow these steps:</p>
 
-```
-git clone https://github.com/Codium-ai/pr-agent.git
-```
+<ol>
+  <li>Fork the GitFlowGPT repository to your GitHub account.</li>
+  <li>Create a new branch for your feature or bug fix: <code>git checkout -b my-new-feature</code>.</li>
+  <li>Make your modifications and ensure the code meets the project's coding standards.</li>
+  <li>Write tests to cover your changes, ensuring the existing test suite passes.</li>
+  <li>Commit your changes with a descriptive commit message: <code>git commit -m "Add my new feature"</code>.</li>
+  <li>Push your branch to your forked repository: <code>git push origin my-new-feature</code>.</li>
+  <li>Open a pull request (PR) against the main branch of the GitFlowGPT repository.</li>
+  <li>Provide a clear description of your changes in the PR, explaining the motivation and any additional information that could be useful for review.</li>
+  <li>Our team will review your contribution and provide feedback or suggest any necessary changes.</li>
+  <li>Once approved, your contribution will be merged into the main branch, and you'll become part of the growing community of GitFlowGPT contributors!</li>
+</ol>
 
-2. Install the requirements in your favorite virtual environment:
+<p>Please make sure to adhere to the <a href="https://chat.openai.com/CODE_OF_CONDUCT.md">Code of Conduct</a> throughout the contribution process. We believe in fostering a welcoming and inclusive environment for all contributors.</p>
 
-```
-pip install -r requirements.txt
-```
+<p>Thank you for considering contributing to GitFlowGPT. Your ideas and efforts are invaluable in making this project even more powerful and beneficial for developers worldwide.</p>
 
-3. Copy the secrets template file and fill in your OpenAI key and your GitHub user token:
+<p>Let's GitFlowGPT and continue simplifying people's lives with language models and automation! 🌟</p>
 
-```
-cp pr_agent/settings/.secrets_template.toml pr_agent/settings/.secrets.toml
-# Edit .secrets.toml file
-```
+<h2>Acknowledgements</h2>
 
-4. Run the appropriate Python scripts from the scripts folder:
+<p>We would like to express our gratitude to OpenAI for their incredible language model, GPT-3.5, which powers GitFlowGPT. Their innovative technology has made this project possible.</p>
 
-```
-python pr_agent/cli.py --pr_url <pr url>
-python pr_agent/cli.py --pr_url <pr url> --question "<your question>"
-```
+<h2>Let's GitFlowGPT and Automate the Fun!</h2>
 
----
-
-#### Method 3: Method 3: Run as a polling server; request reviews by tagging your Github user on a PR
-
-Follow steps 1-3 of method 2.
-Run the following command to start the server:
-
-```
-python pr_agent/servers/github_polling.py
-```
-
----
-
-#### Method 4: Run as a Github App, allowing you to automate the review process on your private or public repositories.
-
-1. Create a GitHub App from the [Github Developer Portal](https://docs.github.com/en/developers/apps/creating-a-github-app).
-
-   - Set the following permissions:
-     - Pull requests: Read & write
-     - Issue comment: Read & write
-     - Metadata: Read-only
-   - Set the following events:
-     - Issue comment
-     - Pull request
-
-2. Generate a random secret for your app, and save it for later. For example, you can use:
-
-```
-WEBHOOK_SECRET=$(python -c "import secrets; print(secrets.token_hex(10))")
-```
-
-3. Acquire the following pieces of information from your app's settings page:
-
-   - App private key (click "Generate a private key", and save the file)
-   - App ID
-
-4. Clone this repository:
-
-```
-git clone https://github.com/Codium-ai/pr-agent.git
-```
-
-5. Copy the secrets template file and fill in the following:
-   - Your OpenAI key.
-   - Set deployment_type to 'app'
-   - Copy your app's private key to the private_key field.
-   - Copy your app's ID to the app_id field.
-   - Copy your app's webhook secret to the webhook_secret field.
-
-```
-cp pr_agent/settings/.secrets_template.toml pr_agent/settings/.secrets.toml
-# Edit .secrets.toml file
-```
-
-6. Build a Docker image for the app and optionally push it to a Docker repository. We'll use Dockerhub as an example:
-
-```
-docker build . -t codiumai/pr-agent:github_app --target github_app -f docker/Dockerfile
-docker push codiumai/pr-agent:github_app  # Push to your Docker repository
-```
-
-7. Host the app using a server, serverless function, or container environment. Alternatively, for development and
-   debugging, you may use tools like smee.io to forward webhooks to your local machine.
-
-8. Go back to your app's settings, set the following:
-
-   - Webhook URL: The URL of your app's server, or the URL of the smee.io channel.
-   - Webhook secret: The secret you generated earlier.
-
-9. Install the app by navigating to the "Install App" tab, and selecting your desired repositories.
-
----
-
-## Usage and Tools
-
-CodiumAI pr-agent provides two types of interactions ("tools"): `"PR Reviewer"` and `"PR Q&A"`.
-
-- The "PR Reviewer" tool automatically analyzes PRs, and provides different types of feedbacks.
-- The "PR Q&A" tool answers free-text questions about the PR.
-
-### PR Reviewer
-
-Here is a quick overview of the different sub-tools of PR Reviewer:
-
-- PR Analysis
-  - Summarize main theme
-  - PR type classification
-  - Is the PR covered by relevant tests
-  - Is this a focused PR
-  - Are there security concerns
-- PR Feedback
-  - General PR suggestions
-  - Code suggestions
-
-This is how a typical output of the PR Reviewer looks like:
-
----
-
-#### PR Analysis
-
-- 🎯 **Main theme:** Adding language extension handler and token handler
-- 📌 **Type of PR:** Enhancement
-- 🧪 **Relevant tests added:** No
-- ✨ **Focused PR:** Yes, the PR is focused on adding two new handlers for language extension and token counting.
-- 🔒 **Security concerns:** No, the PR does not introduce possible security concerns or issues.
-
-#### PR Feedback
-
-- 💡 **General PR suggestions:** The PR is generally well-structured and the code is clean. However, it would be beneficial to add some tests to ensure the new handlers work as expected. Also, consider adding docstrings to the new functions and classes to improve code readability and maintainability.
-
-- 🤖 **Code suggestions:**
-
-  - **relevant file:** pr_agent/algo/language_handler.py
-
-    **suggestion content:** Consider using a set instead of a list for 'bad_extensions' as checking membership in a set is faster than in a list. [medium]
-
-  - **relevant file:** pr_agent/algo/language_handler.py
-
-    **suggestion content:** In the 'filter_bad_extensions' function, you are splitting the filename on '.' and taking the last element to get the extension. This might not work as expected if the filename contains multiple '.' characters. Consider using 'os.path.splitext' to get the file extension more reliably. [important]
-
----
-
-### PR Q&A
-
-This tool answers free-text questions about the PR. This is how a typical output of the PR Q&A looks like:
-
-**Question**: summarize for me the PR in 4 bullet points
-
-**Answer**:
-
-- The PR introduces a new feature to sort files by their main languages. It uses a mapping of programming languages to their file extensions to achieve this.
-- It also introduces a filter to exclude files with certain extensions, deemed as 'bad extensions', from the sorting process.
-- The PR modifies the `get_pr_diff` function in `pr_processing.py` to use the new sorting function. It also refactors the code to move the PR pruning logic into a separate function.
-- A new `TokenHandler` class is introduced in `token_handler.py` to handle token counting operations. This class is initialized with a PR, variables, system, and user, and provides methods to get system and user tokens and to count tokens in a patch.
-
----
-
-## Configuration
-
-The different tools and sub-tools used by CodiumAI pr-agent are easily configurable via the configuration file: `/settings/configuration.toml`.
-
-#### Enabling/disabling sub-tools:
-
-You can enable/disable the different PR Reviewer sub-sections with the following flags:
-
-```
-require_focused_review=true
-require_tests_review=true
-require_security_review=true
-```
-
-## How it works
-
-![PR-Agent Tools](./pics/pr_agent_overview.png)
-
-Check out the [PR Compression strategy](./PR_COMPRESSION.md) page for more details on how we convert a code diff to a manageable LLM prompt
-
-## Roadmap
-
-- [ ] Support open-source models, as a replacement for openai models. Note that a minimal requirement for each open-source model is to have 8k+ context, and good support for generating json as an output
-- [ ] Support other Git providers, such as Gitlab and Bitbucket.
-- [ ] Develop additional logics for handling large PRs, and compressing git patches
-- [ ] Dedicated tools and sub-tools for specific programming languages (Python, Javascript, Java, C++, etc)
-- [ ] Add additional context to the prompt. For example, repo (or relevant files) summarization, with tools such a [ctags](https://github.com/universal-ctags/ctags)
-- [ ] Adding more tools. Possible directions:
-  - [ ] Code Quality
-  - [ ] Coding Style
-  - [ ] Performance (are there any performance issues)
-  - [ ] Documentation (is the PR properly documented)
-  - [ ] Rank the PR importance
-  - [ ] ...
-
-## Similar Projects
-
-- [CodiumAI - Meaningful tests for busy devs](https://github.com/Codium-ai/codiumai-vscode-release)
-- [Aider - GPT powered coding in your terminal](https://github.com/paul-gauthier/aider)
-- [GPT-Engineer](https://github.com/AntonOsika/gpt-engineer)
-- [CodeReview BOT](https://github.com/anc95/ChatGPT-CodeReview)
-- [AI-Maintainer](https://github.com/merwanehamadi/AI-Maintainer)
+<p>Now that you're all set up with GitFlowGPT, it's time to unleash the power of natural language automation on your GitHub Actions and Workflows. Get ready to boost your productivity, save time, and have some fun along the way! Happy automating! 🚀</p>
